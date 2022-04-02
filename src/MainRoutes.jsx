@@ -16,9 +16,10 @@ import Perangkingan from './pages/Perangkingan'
 import JalurPendaftaran from './pages/Details/JalurPendaftaran'
 import Jadwal from './pages/Details/Jadwal'
 
+
+
 const MainRoutes = () => {
         return (
-
                 <Routes>
                         <Route path="/test" element={<Home />} />
                         <Route path="/dashboard" element={<FormPendaftaran />} />
