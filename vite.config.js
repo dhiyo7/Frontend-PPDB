@@ -6,6 +6,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(),
   VitePWA({
+    base: '/',
+    mode: 'production',
     includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt'],
     workbox: {
       cleanupOutdatedCaches: false,
@@ -13,9 +15,9 @@ export default defineConfig({
     },
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Name of your app',
-      short_name: 'Short name of your app',
-      description: 'Description of your app',
+      name: 'PPDB Kabupaten Tegal',
+      short_name: 'PPDB Kabupaten Tegal',
+      description: 'PPDB Kabupaten Tegal',
       theme_color: '#ffffff',
       icons: [
         {
