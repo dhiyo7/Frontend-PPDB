@@ -12,6 +12,7 @@ export default defineConfig({
     workbox: {
       cleanupOutdatedCaches: false,
       sourcemap: true,
+      importScripts: ["sw-code.js"],
     },
     registerType: 'autoUpdate',
     manifest: {
