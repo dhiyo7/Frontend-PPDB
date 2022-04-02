@@ -26,6 +26,7 @@ const MainRoutes = () => {
                         <Route path="/list-sekolah" element={<DaftarSekolah />} />
                         <Route path="/data-dokumen" element={<DataDokumen />} />
                         <Route path="/hasil-seleksi" element={<HasilSeleksi />} />
+                        <Route path="/daya-tampung" element={<HasilSeleksi />} />
                         <Route path='/Login' element={<Login></Login>}></Route>
                         <Route path='/' element={<Landing></Landing>} ></Route>
                         <Route path='/landing/zonasi' element={<Zonasi></Zonasi>}></Route>
