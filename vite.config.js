@@ -10,6 +10,7 @@ export default defineConfig({
     mode: 'production',
     includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt'],
     workbox: {
+      cleanupOutdatedCaches: false,
       sourcemap: true,
       importScripts: ["sw-code.js"],
     },
