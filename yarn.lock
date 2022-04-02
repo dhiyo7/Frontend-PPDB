@@ -4233,6 +4233,11 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+toastify-js@^1.11.2:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/toastify-js/-/toastify-js-1.11.2.tgz#5c66cb05cee30b09e5bd8961ab809e41a3ce716c"
+  integrity sha512-bMBNKhZLPX/sDhpwM7KHIRUTtqCylQeoZDiEWy5zE7iDUJ92XmP8AKgDAp9rXx6pR5GXGFtQHHoH62toahbHgQ==
+
 tr46@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-1.0.1.tgz#a8b13fd6bfd2489519674ccde55ba3693b706d09"
