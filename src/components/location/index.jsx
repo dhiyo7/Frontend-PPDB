@@ -1,18 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import mapboxgl from 'mapbox-gl';
-import Map, { Marker } from "react-map-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import Map, { Marker, useControl } from "react-map-gl";
+import MapboxDraw from '@mapbox/mapbox-gl-draw'
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 import Pin from './pin';
+import "mapbox-gl/dist/mapbox-gl.css";
+
 
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
 
-
+const TOKEN = "pk.eyJ1Ijoicml6YWxtb2hhbWFkIiwiYSI6ImNsMHc3bTZkYjA1OWozbHNkODdtMTAybmMifQ.yf_r7qnBH4hjNV5pXtQHUw"
 mapboxgl.accessToken = "pk.eyJ1Ijoicml6YWxtb2hhbWFkIiwiYSI6ImNsMHc3bTZkYjA1OWozbHNkODdtMTAybmMifQ.yf_r7qnBH4hjNV5pXtQHUw"
+function DrawControl(DrawControlProps) {
+    useControl(() => new MapboxDraw(DrawControlProps), {
+        position: DrawControlProps.position
+    });
+
+    return null;
+}
+
+function Geocoder(GeoCoderProps) {
+    useControl(() => new MapboxGeocoder({
+        ...GeoCoderProps,
+        accessToken: GeoCoderProps.accessToken,
+        mapboxgl: mapboxgl
+
+    }));
+    return null
+}
 
 
 const location = () => {
-     const initialViewState = {
+    const initialViewState = {
         latitude: -3.0285603291926435,
         longitude: 117.06949693115286,
         zoom: 4
@@ -71,26 +91,34 @@ const location = () => {
         }
     }
 
-  return (
-      <div className='mb-5'>
-     
+    return (
+        <div className='mb-5'>
+
             <Map
                 initialViewState={initialViewState}
                 style={{ width: "w-auto", height: 400 }}
-                mapStyle="mapbox://styles/mapbox/streets-v9"
+                mapStyle="mapbox://styles/mapbox/streets-v11"
             >
 
-                <Marker
-                    longitude={marker.longitude}
-                    latitude={marker.latitude}
+                {/*
 
-                >
-                    <Pin size={20} />
-                </Marker>
+                <DrawControl
+                    position="top-left"
+                    displayControlsDefault={false}
+                    controls={{
+                        polygon: true,
+                        trash: true
+                    }}
+                /> */}
+
+
+                <Geocoder position="top-left" accessToken={TOKEN} marker={true} reverseGeocode={true} />
+
+
             </Map>
 
         </div>
-  )
+    )
 }
 
 export default location

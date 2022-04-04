@@ -16,29 +16,29 @@ const Index = () => {
   return (
     <div className="flex flex-wrap">
       <div className="w-full">
-        <div className="flex flex-wrap flex-col w-full tabs">
-          <div className="flex flex-col lg:flex-wrap lg:flex-row w-full mb-8">
+        <div className="  w-full tabs">
+          <div className="flex  lg:flex-wrap lg:flex-row w-full mb-8">
             {state.map((tab, key) => (
               <div
                 key={key}
-                className="flex w-full lg:w-1/6 items-center justify-center">
+                className="flex flex-wrap w-1/3 items-center justify-center ">
                 <button
                   disabled={tab.disabled}
                   onClick={() => {
                     setOpenTab(tab.index)
                   }}
-                  className={`btn btn-default btn-block ${openTab === tab.index
+                  className={`btn btn-default btn-block h-16 px-2 py-2 ${openTab === tab.index
                     ? 'bg-blue-500 text-white'
                     : tab.valid
                       ? 'bg-green-500 text-white'
                       : ''
                     }`}
                   type="button">
-                  <div className='items-center justify-center flex'>
+                  <div className='items-center justify-center text-sm  flex mx-auto'>
                     <span className={`${tab.active
                       ? 'bg-white text-black'
                       : 'bg-blue-500 text-white'
-                      } w-8 h-8 mr-2 justify-items-center items-center justify-center rounded-full text-lg font-display font-bold`}>{tab.index}</span>
+                      } inline-flex mr-2 items-center justify-center lg:px-3 lg:py-1 px-2 py-1 lg:text-lg text-sm font-bold leading-none  rounded-full`}>{tab.index}</span>
                     {tab.title}
                   </div>
                 </button>
@@ -71,8 +71,7 @@ const Index = () => {
             />
           </div>
 
-
-          <div className={`tab-content ${openTab === 4 ? 'block' : 'hidden'}`}>
+          {/*           <div className={`tab-content ${openTab === 4 ? 'block' : 'hidden'}`}>
             <JalurPendaftaran
               index={4}
               isLast={false}
@@ -90,14 +89,18 @@ const Index = () => {
             />
           </div>
 
-          <div className={`tab-content ${openTab === 6 ? 'block' : 'hidden'}`}>
+     
+
+
+          <div className={`tab-content ${openTab === 4 ? 'block' : 'hidden'}`}>
             <Finish
-              index={6}
+              index={4}
               isLast={true}
               dispatch={dispatch}
               setOpenTab={setOpenTab}
             />
           </div>
+               */}
         </div>
       </div>
     </div>

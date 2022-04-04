@@ -4,8 +4,7 @@ import SectionTitle from '../components/section-title';
 import Widget from '../components/widget';
 import { useForm } from 'react-hook-form';
 import Alert from '../components/alerts';
-import Modal3 from '../components/modals/modal-3';
-import { FiCheck } from 'react-icons/fi'
+
 import { Link } from 'react-router-dom';
 
 const DaftarSekolah = ({ alerts }) => {
