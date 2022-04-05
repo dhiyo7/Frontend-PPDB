@@ -1,6 +1,7 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { SearchControl, OpenStreetMapProvider } from 'react-leaflet-geosearch'
+import Map from '../location'
 import './geosearch.css';
 
 
@@ -12,6 +13,9 @@ const AlamatMap = () => {
 
     return (
         <div>
+            <Map />
+
+            {/* 
             <MapContainer center={[51.505, -0.09]} zoom={5} style={{ height: '400px', width: 'auto' }}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -34,6 +38,7 @@ const AlamatMap = () => {
                 />
 
             </MapContainer>
+            */}
             <form>
                 <div className="mb-6">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">

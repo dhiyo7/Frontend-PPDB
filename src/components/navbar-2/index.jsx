@@ -137,13 +137,13 @@ const Navbar1 = () => {
                             </div>
                         </div>
                         <div className='ml-auto flex flex-wrap '>
-                            <Link to="/hasil-seleksi">
+                            <Link to="/dashboard">
                                 <h1 className="text-white bg-blue-600 mr-2    px-4 py-2 rounded-lg text-sm font-bold uppercase"  >
                                     Masuk
                                 </h1>
                             </Link>
 
-                            <Link to="/dashboard">
+                            <Link to="/formulir-pendaftaran">
 
                                 <h1 className="text-white bg-blue-600     px-4 py-2 rounded-lg text-sm font-bold uppercase"
                                 >
@@ -236,13 +236,13 @@ const Navbar1 = () => {
                                 </Dropdown>
 
                                 <div className='ml-auto flex flex-wrap'>
-                                    <Link to="/hasil-seleksi">
+                                    <Link to="/dashboard">
                                         <h1 className="text-white bg-blue-600 mr-2    px-4 py-2 rounded-lg text-sm font-bold uppercase"  >
                                             Masuk
                                         </h1>
                                     </Link>
 
-                                    <Link to="/dashboard">
+                                    <Link to="/formulir-pendaftaran">
 
                                         <h1 className="text-white bg-blue-600     px-4 py-2 rounded-lg text-sm font-bold uppercase"
                                         >
