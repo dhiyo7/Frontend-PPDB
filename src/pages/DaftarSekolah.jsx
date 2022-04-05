@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Location from '../components/location';
 import SectionTitle from '../components/section-title';
 import Widget from '../components/widget';
@@ -8,6 +8,11 @@ import Alert from '../components/alerts';
 import { Link } from 'react-router-dom';
 
 const DaftarSekolah = ({ alerts }) => {
+    const [latlong, setLatLong] = useState(null)
+
+    const handleLatLong = (latlong) => {
+        setLatLong(latlong)
+    }
 
     const { handleSubmit, errors, register } = useForm()
     const onSubmitFn = data => {
@@ -78,7 +83,7 @@ const DaftarSekolah = ({ alerts }) => {
 
             <SectionTitle title="Daftar Sekolah Berdasarkan Lokasi" />
 
-            <Location />
+            <Location handleLatLong={handleLatLong} />
 
             <SectionTitle title="Pilih Sekolah Pendafataran" />
             <Widget>

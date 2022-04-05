@@ -2,7 +2,7 @@ export const initialState = [
   { index: 1, title: 'Data Diri', active: true, disabled: false, valid: false },
   { index: 2, title: 'Alamat', active: false, disabled: true, valid: false },
   { index: 3, title: 'Orang Tua', active: false, disabled: true, valid: false },
-  //  {index: 4, title: 'Jalur Pendaftaran', active: false, disabled: true, valid: false},
+  { index: 4, title: 'Preview', active: false, disabled: true, valid: false },
   // {index: 5, title: 'Upload Dokumen', active: false, disabled: true, valid: false},
   // { index: 4, title: 'Finish', active: false, disabled: true, valid: false },
 ]
