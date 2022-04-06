@@ -26,10 +26,10 @@ function DrawControl(DrawControlProps) {
 
 
 
-const location = () => {
+const location = (props) => {
 
-    const [placeName, setPlaceName] = useState(null)
-
+    const [latlong, setLatlong] = useState(null)
+    props.handleLatLong(latlong)
 
 
 
@@ -45,7 +45,7 @@ const location = () => {
 
 
 
-    const [latLong, setLatLong] = useState()
+    // const [latLong, setLatLong] = useState()
     const [map, setMap] = useState(null);
 
 
@@ -54,22 +54,32 @@ const location = () => {
         const map = new mapboxgl.Map({
             container: mapContainer.current,
             style: "mapbox://styles/mapbox/streets-v11",
-            center: [0, 0],
-            zoom: 5,
+            center: [117.06949693115286, -3.0285603291926435],
+            zoom: 4,
+
         })
 
-        // map.on("load", () => {
-        //     setMap(map);
-        //     map.resize();
-        // });
+        map.on("load", () => {
+            setMap(map);
+            map.resize();
+        });
 
-        // map.on("click", (e) => { });
+        map.on("click", (e) => { });
 
 
         const geocoder = new MapboxGeocoder({
             accessToken: TOKEN,
             mapboxgl: mapboxgl,
-            marker: false
+            marker: false,
+            getItemValue: ((result) => {
+
+                setLatlong({
+                    lng: result.center[0],
+                    lat: result.center[1]
+                })
+                return result.place_name
+            })
+
         })
 
         geocoder.on('result', e => {
@@ -81,8 +91,9 @@ const location = () => {
                 .addTo(map)
             marker.on('dragend', function (e) {
                 let lngLat = e.target.getLngLat();
-                console.log(lngLat['lat'])
-                console.log(lngLat['lng'])
+                setLatlong(lngLat)
+                // console.log(lngLat['lat'])
+                // console.log(lngLat['lng'])
             })
         })
         map.addControl(geocoder)
@@ -148,17 +159,9 @@ const location = () => {
 
     return (
 
-        <div ref={mapContainer} className='mapboxgl-map' style={{ width: "w-auto", height: 400 }}>
+        <div ref={mapContainer} className='mapboxgl-map' style={{ width: "100%", height: 400 }}>
 
         </div>
-
-
-
-
-
-
-
-
 
 
 

@@ -82,7 +82,7 @@ const Settings = ({ index, dispatch, setOpenTab, isLast }) => {
   ]
   return (
     <div className="flex flex-col">
-      <Validation items={items} onSubmit={onSubmit} button={true} width={4} />
+      <Validation step={index} items={items} onSubmit={onSubmit} button={true} width={4} />
     </div>
   )
 }
