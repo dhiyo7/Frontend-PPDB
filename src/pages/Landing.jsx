@@ -84,7 +84,7 @@ const Landing = () => {
                     src="https://res.cloudinary.com/desug/image/upload/v1648752567/PPDB/landingPage/svgexport-1_2_hhrwle.png" />
                 </div>
                 <h2 className="text-xl font-serif title-font text-blue-700 text-opacity-100 mt-5 text-center font-bold">
-                  Seleksi Peserta
+                  Seleksi Peserta Didik
                 </h2>
                 <p className="text-base leading-relaxed mt-2 text-justify font-serif">
                   Sekolah melakukan analisa data dari calon peserta yang mendaftar

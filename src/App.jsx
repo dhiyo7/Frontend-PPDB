@@ -7,13 +7,10 @@ import './css/main.css'
 import './css/animate.css'
 import './css/_components.css'
 
-
 const Wrapper = ({ children }) => {
   return <Layouts>{children}</Layouts>
 }
 function App() {
-
-
   return (
     <BrowserRouter>
       <Wrapper>

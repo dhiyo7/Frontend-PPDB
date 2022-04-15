@@ -32,7 +32,8 @@ const Layouts = ({ children }) => {
       '/landing/jadwal',
       '/sekolah',
       '/perangkingan',
-      '/daya-tampung'
+      '/daya-tampung',
+      '/formulir-pendaftaran'
     ].includes(pathname)
   ) {
     return <Centered>{children}</Centered>

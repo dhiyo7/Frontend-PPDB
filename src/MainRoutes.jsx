@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import FormPendaftaran from './pages/FormPendaftaran'
+import FormPilihSekolah from './pages/FormPilihSekolah'
 import HasilSeleksi from './pages/HasilSeleksi'
 import DataDokumen from './pages/DataDokumen'
 import Login from './pages/Login'
@@ -15,16 +15,19 @@ import Sekolah from './pages/Sekolah'
 import Perangkingan from './pages/Perangkingan'
 import JalurPendaftaran from './pages/Details/JalurPendaftaran'
 import Jadwal from './pages/Details/Jadwal'
+import FormPendaftaran from './pages/FormPendaftaran'
+
+
 
 const MainRoutes = () => {
         return (
-
                 <Routes>
                         <Route path="/test" element={<Home />} />
-                        <Route path="/dashboard" element={<FormPendaftaran />} />
+                        <Route path="/dashboard" element={<FormPilihSekolah />} />
                         <Route path="/list-sekolah" element={<DaftarSekolah />} />
                         <Route path="/data-dokumen" element={<DataDokumen />} />
                         <Route path="/hasil-seleksi" element={<HasilSeleksi />} />
+                        <Route path="/daya-tampung" element={<HasilSeleksi />} />
                         <Route path='/Login' element={<Login></Login>}></Route>
                         <Route path='/' element={<Landing></Landing>} ></Route>
                         <Route path='/landing/zonasi' element={<Zonasi></Zonasi>}></Route>
@@ -35,6 +38,7 @@ const MainRoutes = () => {
                         <Route path="/perangkingan" element={<Perangkingan />} />
                         <Route path="/landing/jalur/pendaftaran" element={<JalurPendaftaran />} />
                         <Route path="/landing/jadwal" element={<Jadwal />} />
+                        <Route path="/formulir-pendaftaran" element={<FormPendaftaran />} />
                 </Routes>
 
         )

@@ -1,10 +1,10 @@
 export const initialState = [
-  {index: 1, title: 'Data Diri', active: true, disabled: false, valid: false},
-  {index: 2, title: 'Alamat',  active: false,disabled: true, valid: false},
-  {index: 3, title: 'Data Orang Tua', active: false, disabled: true, valid: false},
-   {index: 4, title: 'Jalur Pendaftaran', active: false, disabled: true, valid: false},
-  {index: 5, title: 'Upload Dokumen', active: false, disabled: true, valid: false},
-  {index: 6, title: 'Finish',  active: false,disabled: true, valid: false},
+  { index: 1, title: 'Data Diri', active: true, disabled: false, valid: false },
+  { index: 2, title: 'Alamat', active: false, disabled: true, valid: false },
+  { index: 3, title: 'Orang Tua', active: false, disabled: true, valid: false },
+  { index: 4, title: 'Preview', active: false, disabled: true, valid: false },
+  // {index: 5, title: 'Upload Dokumen', active: false, disabled: true, valid: false},
+  // { index: 4, title: 'Finish', active: false, disabled: true, valid: false },
 ]
 
 export const reducer = (state, action) => {
@@ -31,8 +31,8 @@ export const reducer = (state, action) => {
         return step
       })
     case 'active':
-      return state.map(step =>{
-        if(action.index === step.index){
+      return state.map(step => {
+        if (action.index === step.index - 1) {
           step['active'] = true
         }
         return step

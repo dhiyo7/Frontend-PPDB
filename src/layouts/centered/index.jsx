@@ -5,7 +5,7 @@ import Footer from '../../components/footer'
 const Centered = ({ children }) => (
   <div
     data-layout="centered"
-    className="w-full h-screen  items-center justify-center bg-grey-50">
+    className="w-full h-screen   items-center justify-center bg-grey-50">
     <Nav />
     {children}
     <Footer />

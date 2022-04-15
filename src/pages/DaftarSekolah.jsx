@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Location from '../components/location';
 import SectionTitle from '../components/section-title';
 import Widget from '../components/widget';
 import { useForm } from 'react-hook-form';
 import Alert from '../components/alerts';
-import Modal3 from '../components/modals/modal-3';
-import { FiCheck } from 'react-icons/fi'
+
 import { Link } from 'react-router-dom';
 
 const DaftarSekolah = ({ alerts }) => {
+    const [latlong, setLatLong] = useState(null)
+
+    const handleLatLong = (latlong) => {
+        setLatLong(latlong)
+    }
 
     const { handleSubmit, errors, register } = useForm()
     const onSubmitFn = data => {
@@ -79,7 +83,7 @@ const DaftarSekolah = ({ alerts }) => {
 
             <SectionTitle title="Daftar Sekolah Berdasarkan Lokasi" />
 
-            <Location />
+            <Location handleLatLong={handleLatLong} />
 
             <SectionTitle title="Pilih Sekolah Pendafataran" />
             <Widget>
